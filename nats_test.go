@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/dirkm/embeddednats.git"
+	"github.com/dirkm/embeddednats"
 )
 
 func TestNATSStreaming(t *testing.T) {

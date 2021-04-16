@@ -1,4 +1,4 @@
-module github.com/dirkm/embeddednats.git
+module github.com/dirkm/embeddednats
 go 1.16
 
 require (
