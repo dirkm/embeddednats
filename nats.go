@@ -1,5 +1,7 @@
 package embeddednats
 
+// go get -t github.com/nats-io/nats-server/v2@v2.2.1
+
 import (
 	"fmt"
 	"os"
@@ -7,7 +9,6 @@ import (
 	"testing"
 
 	natsstreaming "github.com/nats-io/nats-streaming-server/server"
-	"github.com/nats-io/nats.go"
 	"github.com/phayes/freeport"
 )
 
@@ -40,8 +41,6 @@ func StartNATSStreaming(t testing.TB) (natsPort int, clusterListenPort int) {
 
 	sOpts := natsstreaming.GetDefaultOptions()
 	sOpts.ID = "test-cluster"
-	sOpts.Debug = true
-	sOpts.NATSClientOpts = append(sOpts.NATSClientOpts, nats.UseOldRequestStyle())
 
 	_, err = natsstreaming.RunServerWithOpts(sOpts, &nOpts)
 	if err != nil {
